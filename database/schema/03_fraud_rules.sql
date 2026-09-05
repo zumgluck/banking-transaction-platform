@@ -1,0 +1,7 @@
+CREATE TABLE FRAUD_RULES (
+    RULE_ID NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, --уникальный ID правила
+    RULE_CODE VARCHAR2(50) UNIQUE NOT NULL, --техническое имя правила
+    DESCRIPTION VARCHAR2(100) NOT NULL, --понятное описание
+    SCORE NUMBER CHECK (SCORE BETWEEN 0 AND 100) NOT NULL, --сколько risk points добавляет
+    STATUS VARCHAR2(30)  NOT NULL CHECK (STATUS IN ('ACTIVE', 'INACTIVE'))--активно ли правило
+);
