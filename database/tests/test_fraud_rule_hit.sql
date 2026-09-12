@@ -24,6 +24,13 @@ BEGIN
         );
 
     END IF;
-END;
 
+        EXCEPTION
+    WHEN  DUP_VAL_ON_INDEX THEN
+        DBMS_OUTPUT.PUT_LINE(
+            'Rule hit already exists'
+        );
+
+END;
 /
+
