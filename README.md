@@ -149,3 +149,13 @@ This is an educational portfolio project.
 
 It does not process real banking transactions
 or contain real customer information.
+
+## Project Status
+
+Active development.
+
+Current focus:
+- Java fundamentals
+- REST API development
+- Fraud detection
+- Git and SDLC practices
