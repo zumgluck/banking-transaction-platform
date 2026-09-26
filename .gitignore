@@ -1,0 +1,9 @@
+# VS Code local settings
+.vscode/
+
+# Temporary files
+*.log
+
+# Environment variables and secrets
+.env
+.env.*
