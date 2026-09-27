@@ -13,20 +13,22 @@ public class HealthController {
         return status;
     }
 
- @GetMapping("/score/{value}")
-public String score(@PathVariable int value) {
+@GetMapping("/score/{value}")
+public FraudDecision score(@PathVariable int value) {
 
+    // Step 1: Input validation
     if (value < 0 || value > 100) {
-        return "INVALID";
+        return new FraudDecision(value, "INVALID");
     }
 
+    // Step 2: Fraud decision
     if (value >= 70) {
-        return "DECLINE";
+        return new FraudDecision(value, "DECLINE");
     } else if (value >= 30) {
-        return "REVIEW";
+        return new FraudDecision(value, "REVIEW");
     } else {
-        return "ALLOW";
+        return new FraudDecision(value, "ALLOW");
     }
-}
+    }
 }
     
