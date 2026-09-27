@@ -43,5 +43,15 @@ void shouldReviewAtLowerBoundary() {
 
         assertEquals(30, result.getScore());
         assertEquals("REVIEW", result.getDecision());
-    }   
+    }  
+    @Test
+void shouldDeclineAtUpperBoundary() {
+
+    HealthController controller = new HealthController();
+
+    FraudDecision result = controller.score(70);
+
+    assertEquals(70, result.getScore());
+    assertEquals("DECLINE", result.getDecision());
+}     
 }
